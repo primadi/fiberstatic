@@ -107,24 +107,19 @@
 </html>
 
 <script type="text/javascript">
-      var snd = new Audio("sound2.wav");
-    function playSound() {
-      snd.play();
-    }
-  $(document).ready(function () {
+  var snd = new Audio("sound2.wav");
+  function playSound() {
+    snd.play();
+  }
+    $("#imageBG").on("load", function (event) {
+      var height = $(this).height();
+      var width = $(this).width();
 
-    console.log("ready!");
-    var img = document.getElementById("imageBG");
-    //or however you get a handle to the IMG
-    var height = img.clientHeight;
-    var width = img.clientWidth;
-
-    var buttonWidth = `${width * 0.8}px`;
-    var marginHeight = `${width * 0.65}px`;
-    // buttonWidth = `${buttonWidth}px`
-
-    document.getElementById("launchButton").style.width = buttonWidth;
-    document.getElementById("wrapperPos").style.top = marginHeight;
-  });
-  // snd.currentTime=0;
+      var buttonWidth = `${width * 0.8}px`;
+      var marginHeight = `${width * 0.65}px`;
+      // buttonWidth = `${buttonWidth}px`
+      debugger;
+      document.getElementById("launchButton").style.width = buttonWidth;
+      document.getElementById("wrapperPos").style.top = marginHeight;
+    });
 </script>
