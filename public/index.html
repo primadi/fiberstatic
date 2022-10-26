@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+  <script
+    src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+    crossorigin="anonymous"
+  ></script>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -86,10 +91,15 @@
   </head>
   <body>
     <div style="text-align: center">
-      <img id="imageBG" src="ceremony2.png" alt="" />
+      <img id="imageBG" src="ceremony.png" alt="" />
     </div>
     <div class="buttonWrapper" id="wrapperPos">
-      <button id="launchButton" class="buttonStyle" role="button" onclick="playSound()">
+      <button
+        id="launchButton"
+        class="buttonStyle"
+        role="button"
+        onclick="playSound()"
+      >
         LAUNCH
       </button>
     </div>
@@ -97,22 +107,23 @@
 </html>
 
 <script type="text/javascript">
-  var img = document.getElementById("imageBG");
-  //or however you get a handle to the IMG
-  const height = img.clientHeight;
-  const width = img.clientWidth;
+  $(document).ready(function () {
+    var snd = new Audio("sound.wav");
+    function playSound() {
+      snd.play();
+    }
+    console.log("ready!");
+    var img = document.getElementById("imageBG");
+    //or however you get a handle to the IMG
+    const height = img.clientHeight;
+    const width = img.clientWidth;
 
-  const buttonWidth = `${width*0.8}px`
-  const marginHeight = `${width*0.65}px`
-  // buttonWidth = `${buttonWidth}px`
+    const buttonWidth = `${width * 0.8}px`;
+    const marginHeight = `${width * 0.65}px`;
+    // buttonWidth = `${buttonWidth}px`
 
-  document.getElementById("launchButton").style.width = buttonWidth; 
-  document.getElementById("wrapperPos").style.top = marginHeight; 
-
-  debugger
-  var snd = new Audio("sound2.wav");
-  function playSound() {
-    snd.play();
-  }
+    document.getElementById("launchButton").style.width = buttonWidth;
+    document.getElementById("wrapperPos").style.top = marginHeight;
+  });
   // snd.currentTime=0;
 </script>
