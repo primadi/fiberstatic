@@ -76,40 +76,25 @@
 
       .buttonWrapper {
         position: fixed;
-        /* bottom: 8vh; */
-        width: 100vw;
-        text-align: center;
-        /* left: 50%; */
-        /* margin-left: -100px; */
+        bottom: 8vh;
+        left: 50%;
+        margin-left: -100px;
       }
     </style>
   </head>
   <body>
     <div style="text-align: center">
-      <img id="imageBG" src="ceremony2.png" alt="" />
+      <img src="ceremony.jpg" alt="" />
     </div>
-    <div class="buttonWrapper" id="wrapperPos">
-      <button id="launchButton" class="buttonStyle" role="button" onclick="playSound()">
-        LAUNCH
+    <div class="buttonWrapper">
+      <button class="buttonStyle" role="button" onclick="playSound()">
+        Launch
       </button>
     </div>
   </body>
 </html>
 
 <script type="text/javascript">
-  var img = document.getElementById("imageBG");
-  //or however you get a handle to the IMG
-  const height = img.clientHeight;
-  const width = img.clientWidth;
-
-  const buttonWidth = `${width*0.8}px`
-  const marginHeight = `${width*0.65}px`
-  // buttonWidth = `${buttonWidth}px`
-
-  document.getElementById("launchButton").style.width = buttonWidth; 
-  document.getElementById("wrapperPos").style.top = marginHeight; 
-
-  debugger
   var snd = new Audio("sound2.wav");
   function playSound() {
     snd.play();
